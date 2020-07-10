@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cmathchapterfive">
+
+    <Button
+        android:id="@+id/cmcfive_lecture"
+        android:text="CHAPTER LECTURES"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FFFF00"
+        android:layout_centerVertical="true"
+        android:textSize="18sp"
+        android:background="@drawable/lecturesbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"/>
+
+    <Button
+        android:id="@+id/cmcfive_practise"
+        android:text="PRACTISE QUESTIONS"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#304FFE"
+        android:layout_below="@+id/cmcfive_lecture"
+        android:layout_marginTop="12sp"
+        android:textSize="18sp"
+        android:background="@drawable/practisebuttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"/>
+    <Button
+        android:id="@+id/cmcfive_solution"
+        android:text="CHAPTER SOLUTIONS"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#24ED2C"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_below="@+id/cmcfive_practise"
+        android:background="@drawable/solutionbuttons"
+        android:layout_marginTop="12sp"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
