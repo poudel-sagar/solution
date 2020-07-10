@@ -1,0 +1,151 @@
+package com.example.blesolution;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+public class cmathOne extends AppCompatActivity {
+    ListView listt;
+    String titless[]={"CHAPTER ONE",  "CHAPTER TWO",  "CHAPTER THREE", "CHAPTER FOUR",       "CHAPTER FIVE","CHAPTER SIX",                  "CHAPTER SEVEN",  "CHAPTER EIGHT", "CHAPTER NINE",   "CHAPTER TEN","CHAPTER ELEVEN","CHAPTER TWELVE" ,     "CHAPTER THIRTEEN","CHAPTER FOURTEEN","CHAPTER FIFTEEN","CHAPTER SIXTEEN",            "CHAPTER SEVENTEEN"};
+    String descriptionss[]={  "SET",  "NUMBER SYSTEM","ROOTS",         "REAL NUMBER SYSTEM", "INTEGERS",    "RATIO PROPORTION & PERCENTAGE","PROFIT AND LOSS","UNITARY METHOD","SIMPLE INTEREST","ALGEBRA",    "GEOMETRY",      "CO-ORDINATE GEOMETRY","AREA & PERIMETER","SOLID SHAPES",    "TRANSFORMATION", "BEARINGS AND SCALE DRAWINGS","STATISTICS"};
+    int imgss[]={R.drawable.unit_one,R.drawable.unit_two,R.drawable.unit_three,R.drawable.unit_four,R.drawable.unit_five,R.drawable.unit_six,R.drawable.unit_seven,R.drawable.unit_eight,R.drawable.unit_nine,R.drawable.unit_ten,R.drawable.unit_eleven,R.drawable.unit_twelve,R.drawable.unit_eight,R.drawable.unit_nine,R.drawable.unit_ten,R.drawable.unit_eleven,R.drawable.unit_twelve};
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cmath_one);
+        listt=findViewById(R.id.cmathlist1);
+
+        MyAdapter adapter=new MyAdapter(this,titless,imgss,descriptionss);
+        listt.setAdapter(adapter);
+
+        listt.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+            if(position==0)
+            {
+                Intent cmccOne=new Intent(cmathOne.this,cmcOne.class);
+                startActivity(cmccOne);
+            }
+                if(position==1)
+                {
+                    Intent cmccTwo=new Intent(cmathOne.this,cmcTwo.class);
+                    startActivity(cmccTwo);
+                }
+                if(position==2)
+                {
+                    Intent cmathchapterrthree=new Intent(cmathOne.this,cmathchapterthree.class);
+                    startActivity(cmathchapterrthree);
+                }
+                if(position==3)
+                {
+                    Intent cmathchapterrfour=new Intent(cmathOne.this,cmathchapterfour.class);
+                    startActivity(cmathchapterrfour);
+                }
+                if(position==4)
+                {
+                    Intent cmathchapterrfive=new Intent(cmathOne.this,cmathchapterfive.class);
+                    startActivity(cmathchapterrfive);
+                }
+                if(position==5)
+                {
+                    Intent cmathchapterrsix=new Intent(cmathOne.this,cmathchaptersix.class);
+                    startActivity(cmathchapterrsix);
+                }
+                if(position==6)
+                {
+                    Intent cmathchapterrseven=new Intent(cmathOne.this,cmathchapterseven.class);
+                    startActivity(cmathchapterrseven);
+                }
+                if(position==7)
+                {
+                    Intent cmathchapterreight=new Intent(cmathOne.this,cmathchaptereight.class);
+                    startActivity(cmathchapterreight);
+                }
+                if(position==8)
+                {
+                    Intent cmathchapterrnine=new Intent(cmathOne.this,cmathchapternine.class);
+                    startActivity(cmathchapterrnine);
+                }
+                if(position==9)
+                {
+                    Intent cmathchapterrten=new Intent(cmathOne.this,cmathchapterten.class);
+                    startActivity(cmathchapterrten);
+                }
+                if(position==10)
+                {
+                    Intent cmathchapterreleven=new Intent(cmathOne.this,cmathchaptereleven.class);
+                    startActivity(cmathchapterreleven);
+                }
+                if(position==11)
+                {
+                    Intent cmathchapterrtwelve=new Intent(cmathOne.this,cmathchaptertwelve.class);
+                    startActivity(cmathchapterrtwelve);
+                }
+                if(position==12)
+                {
+                    Intent cmathchapterrtwelve=new Intent(cmathOne.this,cmathchapterthirteen.class);
+                    startActivity(cmathchapterrtwelve);
+                }
+                if(position==13)
+                {
+                    Intent cmathchapterrtwelve=new Intent(cmathOne.this,cmathchapterfourteen.class);
+                    startActivity(cmathchapterrtwelve);
+                }
+                if(position==14)
+                {
+                    Intent cmathchapterrtwelve=new Intent(cmathOne.this,cmathchapterfifteen.class);
+                    startActivity(cmathchapterrtwelve);
+                }
+                if(position==15)
+                {
+                    Intent cmathchapterrtwelve=new Intent(cmathOne.this,cmathchaptersixteen.class);
+                    startActivity(cmathchapterrtwelve);
+                }
+
+            }
+        });
+    }
+    class MyAdapter extends ArrayAdapter<String>{
+        Context contextt;
+        String myTitless[];
+        String myDescriptionss[];
+        int[] imgss;
+        MyAdapter(Context cc,String[] titless,int[] imgss,String[] descriptionss )
+        {
+            super(cc,R.layout.cmathrow,R.id.cmathtext1,titless);
+            this.contextt=cc;
+            this.imgss=imgss;
+            this.myTitless=titless;
+            this.myDescriptionss=descriptionss;
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+            LayoutInflater layoutInflater=(LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View cmathrow=layoutInflater.inflate(R.layout.cmathrow,parent,false);
+            ImageView imagess=cmathrow.findViewById(R.id.cmathlogo);
+            TextView myTitless=cmathrow.findViewById(R.id.cmathtext1);
+            TextView myDescriptionss=cmathrow.findViewById(R.id.cmathtext2);
+            imagess.setImageResource(imgss[position]);
+            myTitless.setText(titless[position]);
+            myDescriptionss.setText(descriptionss[position]);
+            return cmathrow;
+        }
+    }
+
+
+}
